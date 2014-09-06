@@ -50,17 +50,17 @@ p {
   color: #555555;
 }
 .knowledge-entity--level-5 {
-  border-color: #d9534f;
+  border-color: #428bca;
 }
 .knowledge-entity--level-4 {
-  border-color: #f0ad4e;
+  border-color: #5cb85c;
 }
 .knowledge-entity--level-3 {
   border-color: #5bc0de;
 }
 .knowledge-entity--level-2 {
-  border-color: #5cb85c;
+  border-color: #f0ad4e;
 }
 .knowledge-entity--level-1 {
-  border-color: #428bca;
+  border-color: #d9534f;
 }
