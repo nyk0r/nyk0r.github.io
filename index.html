@@ -27,11 +27,27 @@
          </div>
          <div class="info-list">
             <span class="info-list__category">{{ i18n('contact.email') }}</span>
-            <span class="info-list__value">{{ data.contact.email }}</span>
+            <span class="info-list__value">
+               <a ng-href="{{ 'mailto:' + data.contact.email }}">
+                  {{ data.contact.email }}
+               </a>
+            </span>
          </div>
          <div class="info-list">
             <span class="info-list__category">{{ i18n('contact.skype') }}</span>
-            <span class="info-list__value">{{ data.contact.skype }}</span>
+            <span class="info-list__value">
+               <a ng-href="{{ 'skype:' + data.contact.skype }}">
+                  {{ data.contact.skype }}
+               </a>
+            </span>
+         </div>
+         <div class="info-list">
+            <span class="info-list__category">{{ i18n('contact.github') }}</span>
+            <span class="info-list__value">
+               <a ng-href="{{ data.contact.github.url }}" target='_blank'>
+                  {{ data.contact.github.name }}
+               </a>
+            </span>
          </div>
       </section>
 
@@ -67,6 +83,7 @@
 
       <section>
          <h2>{{ i18n('technologies.title') }}</h2>
+
       </sction>
 
       <section>

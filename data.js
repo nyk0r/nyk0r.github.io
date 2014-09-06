@@ -4,7 +4,11 @@ var data = {
       name_ru: 'Мозгунов Цалик',
       dateOfBirth: new Date('1988-07-12'),
       email: 'mozgunov@gmail.com',
-      skype: 'nyk0r_'
+      skype: 'nyk0r_',
+      github: {
+         name: 'nyk0r',
+         url: 'https://github.com/nyk0r/'
+      }
    },
    education: [
       {
@@ -107,7 +111,7 @@ var data = {
          items: [
             {
                name: 'KendoUI',
-               versions: [],
+               versions: ['2013 Q3', '2013 Q4', '2014 Q1'],
                level: 5
             },
             {
@@ -117,7 +121,7 @@ var data = {
             },
             {
                name: 'AngularJS',
-               versions: [],
+               versions: ['1.2.x', '1.3.x'],
                level: 4
             },
             {
@@ -127,7 +131,7 @@ var data = {
             },
             {
                name: '.NET Framework',
-               versions: ['2', '3.5', '4'],
+               versions: ['2', '3.5', '4', '5'],
                level: 3
             }
          ]
@@ -135,12 +139,39 @@ var data = {
       {
          category: 'Data Bases',
          category_ru: 'Базы Данных',
-         items: []
+         items: [
+            {
+               name: 'MS SQL Server',
+               versions: ['2005', '2008', '2012'],
+               level: 3
+            },
+            {
+               name: 'Postgre SQL',
+               versions: ['8.3'],
+               level: 3
+            },
+            {
+               name: 'SQLite',
+               versions: ['3.x'],
+               level: 3
+            }
+         ]
       },
       {
          category: 'IDEs',
          category_ru: 'Среды Разработки',
-         items: []
+         items: [
+            {
+               name: 'Visual Studio',
+               versions: ['2005', '2008', '2010', '2012'],
+               level: 4
+            },
+            {
+               name: 'WebStorm',
+               versions: ['6', '7'],
+               level: 4
+            }
+         ]
       },
       {
          category: 'Tools',
@@ -148,12 +179,12 @@ var data = {
          items: [
             {
                name: 'SVN',
-               versions: [],
+               versions: ['1.7.x'],
                level: 3
             },
             {
                name: 'Git',
-               versions: [],
+               versions: ['1.6.x', '1.7.x'],
                level: 5
             }
          ]
