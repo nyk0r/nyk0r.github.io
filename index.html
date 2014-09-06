@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html ng-app="cv">
+<head>
+   <title ng-bind="title">CV</title>
+   <link rel="stylesheet" href="style.css" />
+   <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+   <script type="text/javascript" src="data.js"></script>
+   <script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="app" ng-cloak>
+   <div class="container">
+      <section>
+         <h2>{{ i18n('contact.title') }}</h2>
+         <div class="info-list">
+            <span class="info-list__category">{{ i18n('contact.name') }}</span>
+            <span class="info-list__value">
+               <span ng-if="locale=='en'">{{ data.contact.name }}</span>
+               <span ng-if="locale=='ru'">{{ data.contact.name_ru }}</span>
+            </span>
+         </div>
+         <div class="info-list">
+            <span class="info-list__category">{{ i18n('contact.dateOfBirth') }}</span>
+            <span class="info-list__value">
+               <span ng-if="locale=='en'">{{ data.contact.dateOfBirth | date:'MM/dd/yyyy' }}</span>
+               <span ng-if="locale=='ru'">{{ data.contact.dateOfBirth | date:'dd.MM.yyyy' }}</span>
+            </span>
+         </div>
+         <div class="info-list">
+            <span class="info-list__category">{{ i18n('contact.email') }}</span>
+            <span class="info-list__value">{{ data.contact.email }}</span>
+         </div>
+         <div class="info-list">
+            <span class="info-list__category">{{ i18n('contact.skype') }}</span>
+            <span class="info-list__value">{{ data.contact.skype }}</span>
+         </div>
+      </section>
+
+      <section>
+         <h2>{{ i18n('education.title') }}</h2>
+         <div ng-repeat="step in data.education">
+            <p>
+               <span ng-if="locale=='en'">{{ step.institution }}</span>
+               <span ng-if="locale=='ru'">{{ step.institution_ru }}</span>
+            </p>
+            <p>
+               <span ng-if="locale=='en'">{{ step.degree }}</span>
+               <span ng-if="locale=='ru'">{{ step.degree_ru }}</span>
+               <span>{{ step.start }} - {{ step.end }}</span>
+            </p>
+         </div>
+      </section>
+
+      <section>
+         <h2>{{ i18n('spokenLanguages.title') }}</h2>
+         <div>
+            <span class="knowledge-entity" ng-class="'knowledge-entity--level-' + language.level" ng-repeat="language in data.spokenLanguages">
+               <span class="knowledge-entity__item">
+                  <span ng-if="locale=='en'">{{ language.name }}</span>
+                  <span ng-if="locale=='ru'">{{ language.name_ru }}</span>
+               </span>
+               <span class="knowledge-entity__level">
+                  {{ getSpokenLanguageLevelTitle(language.level) }}
+               </span>
+            </span>
+         </div>
+      </sction>
+
+      <section>
+         <h2>{{ i18n('technologies.title') }}</h2>
+      </sction>
+
+      <section>
+         <h2>{{ i18n('experience.title') }}</h2>
+      </section>
+   </div>
+</body>
+</html>

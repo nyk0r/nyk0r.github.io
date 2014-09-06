@@ -1,0 +1,66 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333333;
+}
+h2 {
+  border-bottom: 1px solid #bfbfbf;
+}
+p {
+  margin: 0.5em 0;
+}
+.container {
+  width: 1000px;
+  margin: 3em auto;
+  border-width: 1px;
+  padding: 1em;
+  background-color: #eeeeee;
+  border-style: solid;
+  border-color: #bfbfbf;
+  border-radius: 5px;
+}
+.info-list__category {
+  display: inline-block;
+  width: 10em;
+  color: #555555;
+}
+.info-list__category::after {
+  content: ':';
+}
+.knowledge-entity {
+  display: inline-block;
+  margin-right: 1em;
+  border-width: 1px 1px 1px 3px;
+  background-color: #FFF;
+  border-style: solid;
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.125);
+}
+.knowledge-entity__item {
+  display: block;
+  padding: 0.3em;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #bfbfbf;
+}
+.knowledge-entity__level {
+  display: block;
+  padding: 0.3em;
+  font-size: 0.8em;
+  color: #555555;
+}
+.knowledge-entity--level-5 {
+  border-color: #d9534f;
+}
+.knowledge-entity--level-4 {
+  border-color: #f0ad4e;
+}
+.knowledge-entity--level-3 {
+  border-color: #5bc0de;
+}
+.knowledge-entity--level-2 {
+  border-color: #5cb85c;
+}
+.knowledge-entity--level-1 {
+  border-color: #428bca;
+}
