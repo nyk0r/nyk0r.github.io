@@ -66,7 +66,7 @@ var data = {
             {
                name: 'JavaScript',
                versions: ['1.5', '1.6', '1.8.x'],
-               levele: 5
+               level: 5
             },
             {
                name: 'CSS',
@@ -91,7 +91,7 @@ var data = {
             {
                name: 'Python',
                versions: ['2.x'],
-               levele: 3
+               level: 3
             },
             {
                name: 'PHP',

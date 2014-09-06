@@ -83,7 +83,31 @@
 
       <section>
          <h2>{{ i18n('technologies.title') }}</h2>
-
+         <table class="list-table">
+            <tbody>
+               <tr ng-repeat="technology in data.technologies">
+                  <td>
+                     <span ng-if="locale=='en'">{{ technology.category }}</span>
+                     <span ng-if="locale=='ru'">{{ technology.category_ru }}</span>
+                  </td>
+                  <td>
+                     <span class="knowledge-entity"
+                           ng-class="['knowledge-entity--level-' + item.level, !$parent.$first ? 'knowledge-entity--margin-top' : '']" 
+                           ng-repeat="item in technology.items">
+                        <span class="knowledge-entity__item">
+                           {{ item.name }}
+                           <span class="knowledge-entity__version">
+                              <span ng-repeat="version in item.versions">
+                                 {{ version }}<span ng-if="!$last">,</span>
+                              </span>
+                           </span>
+                        </span>
+                        <span class="knowledge-entity__level">{{ item.level }}/5</span>
+                     </span>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
       </sction>
 
       <section>
