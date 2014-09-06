@@ -9,7 +9,7 @@
 </head>
 <body ng-controller="app" ng-cloak>
    <div class="container">
-      <section>
+      <section class="block">
          <h2>{{ i18n('contact.title') }}</h2>
          <div class="info-list">
             <span class="info-list__category">{{ i18n('contact.name') }}</span>
@@ -51,7 +51,7 @@
          </div>
       </section>
 
-      <section>
+      <section class="block">
          <h2>{{ i18n('education.title') }}</h2>
          <div ng-repeat="step in data.education">
             <p>
@@ -66,7 +66,7 @@
          </div>
       </section>
 
-      <section>
+      <section class="block">
          <h2>{{ i18n('spokenLanguages.title') }}</h2>
          <div>
             <span class="knowledge-entity" ng-class="'knowledge-entity--level-' + language.level" ng-repeat="language in data.spokenLanguages">
@@ -79,9 +79,9 @@
                </span>
             </span>
          </div>
-      </sction>
+      </section>
 
-      <section>
+      <section class="block">
          <h2>{{ i18n('technologies.title') }}</h2>
          <table class="list-table">
             <tbody>
@@ -92,8 +92,8 @@
                   </td>
                   <td>
                      <span class="knowledge-entity"
-                           ng-class="['knowledge-entity--level-' + item.level, !$parent.$first ? 'knowledge-entity--margin-top' : '']" 
-                           ng-repeat="item in technology.items">
+                           ng-class="['knowledge-entity--level-' + item.level, !$parent.$first ? 'knowledge-entity--margin-top' : '']"
+                           ng-repeat="item in technology.items | orderBy:'level'">
                         <span class="knowledge-entity__item">
                            {{ item.name }}
                            <span class="knowledge-entity__version">
@@ -108,9 +108,9 @@
                </tr>
             </tbody>
          </table>
-      </sction>
+      </section>
 
-      <section>
+      <section class="block block--no-margin">
          <h2>{{ i18n('experience.title') }}</h2>
       </section>
    </div>

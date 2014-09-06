@@ -205,19 +205,15 @@ var data = {
             technologies: [
                {
                   name: 'KendoUI',
-                  version: ''
+                  version: '2014 Q1'
                },
                {
                   name: 'jQuery',
-                  version: ''
+                  version: '2.x'
                },
                {
                   name: 'Orchard CMS',
-                  version: ''
-               },
-               {
-                  name: 'Asp.NET MVC',
-                  version: ''
+                  version: '1.8.1'
                },
                {
                   name: '.NET',
