@@ -43,10 +43,9 @@ angular.module('cv', []).
       $scope.locale = 'en',
       $scope.data = data;
 
-      $scope.i18n = function (path) {
-         path += '.' + $scope.locale;
+      function getValueByPath (source, path) {
          var parts = path.split('.'),
-             value = localization,
+             value = source,
              part;
 
          while (part = parts.shift()) {
@@ -54,6 +53,14 @@ angular.module('cv', []).
          }
 
          return value;
+      }
+
+      $scope.i18n = function (path) {
+         return getValueByPath(localization, path + '.' + $scope.locale);
+      }
+
+      $scope.i18nData = function (path) {
+         return getValueByPath(this, path + ($scope.localization === 'ru' ? '_ru' : ''));
       }
 
       $scope.getSpokenLanguageLevelTitle = function (level) {

@@ -42,12 +42,10 @@ p {
 .knowledge-entity__item {
   display: block;
   padding: 0.3em;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-color: #bfbfbf;
 }
 .knowledge-entity__level {
   display: block;
+  border-top: solid 1px #bfbfbf;
   padding: 0.3em;
   font-size: 0.8em;
   color: #555555;

@@ -14,8 +14,7 @@
          <div class="info-list">
             <span class="info-list__category">{{ i18n('contact.name') }}</span>
             <span class="info-list__value">
-               <span ng-if="locale=='en'">{{ data.contact.name }}</span>
-               <span ng-if="locale=='ru'">{{ data.contact.name_ru }}</span>
+               {{ i18nData('data.contact.name') }}
             </span>
          </div>
          <div class="info-list">
@@ -55,12 +54,10 @@
          <h2>{{ i18n('education.title') }}</h2>
          <div ng-repeat="step in data.education">
             <p>
-               <span ng-if="locale=='en'">{{ step.institution }}</span>
-               <span ng-if="locale=='ru'">{{ step.institution_ru }}</span>
+               {{ i18nData('step.institution') }}
             </p>
             <p>
-               <span ng-if="locale=='en'">{{ step.degree }}</span>
-               <span ng-if="locale=='ru'">{{ step.degree_ru }}</span>
+               {{ i18nData('step.degree') }}
                <span>{{ step.start }} - {{ step.end }}</span>
             </p>
          </div>
@@ -71,8 +68,7 @@
          <div>
             <span class="knowledge-entity" ng-class="'knowledge-entity--level-' + language.level" ng-repeat="language in data.spokenLanguages">
                <span class="knowledge-entity__item">
-                  <span ng-if="locale=='en'">{{ language.name }}</span>
-                  <span ng-if="locale=='ru'">{{ language.name_ru }}</span>
+                  {{ i18nData('language.name') }}
                </span>
                <span class="knowledge-entity__level">
                   {{ getSpokenLanguageLevelTitle(language.level) }}
@@ -87,8 +83,7 @@
             <tbody>
                <tr ng-repeat="technology in data.technologies">
                   <td>
-                     <span ng-if="locale=='en'">{{ technology.category }}</span>
-                     <span ng-if="locale=='ru'">{{ technology.category_ru }}</span>
+                     {{ i18nData('technology.category') }}
                   </td>
                   <td>
                      <span class="knowledge-entity"
@@ -112,6 +107,45 @@
 
       <section class="block block--no-margin">
          <h2>{{ i18n('experience.title') }}</h2>
+         <table class="list-table">
+            <tbody>
+               <tr ng-repeat="work in data.experience">
+                  <td>
+                     <div class="work">
+                        <div>
+                           <span class="work__company">
+                              <span ng-if="!work.site">{{ work.company }}</span>
+                              <a ng-if="work.site" ng-href="{{ work.site }}">{{ work.company }}</a>
+                           </span>
+                        </div>
+                        <div class="work__position">{{ i18nData('work.position') }}</div>
+                        <div class="work__time-span">
+                           {{ work.start | date:'MMMM yyyy' }} - {{ work.end | date:'MMMM yyyy' }}
+                        </div>
+                     </div>
+                  </td>
+                  <td>
+                     <div class="project" ng-repeat="project in work.projects">
+                        <div class="project__name">
+                           <span ng-if="!project.site">{{ project.name }}</span>
+                           <a ng-if="project.site" ng-href="{{ project.site }}">{{ project.name }}</a>
+                        </div>
+                        <div clss="project__description">{{ i18nData('project.description') }}</div>
+                        <div class="project__technologies">
+                           <span class="knowledge-entity" ng-repeat="technology in project.technologies">
+                              <span class="knowledge-entity__item">
+                                 {{ technology.name }}
+                                 <span class="knowledge-entity__version">
+                                    {{ technology.version }}
+                                 </span>
+                              </span>
+                           </span>
+                        </div>
+                     </div>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
       </section>
    </div>
 </body>
