@@ -60,7 +60,7 @@ angular.module('cv', []).
       }
 
       $scope.i18nData = function (path) {
-         return getValueByPath(this, path + ($scope.localization === 'ru' ? '_ru' : ''));
+         return getValueByPath(this, path + ($scope.localization === 'ru' ? '_ru' : '')) || getValueByPath(this, path);
       }
 
       $scope.getSpokenLanguageLevelTitle = function (level) {

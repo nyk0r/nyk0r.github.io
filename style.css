@@ -1,5 +1,7 @@
+/* nyk0r.github.io 2014-09-10 10:09:23 */
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fbfbfb;
   color: #333333;
 }
 h2 {
@@ -12,6 +14,7 @@ p {
   width: 1000px;
   margin: 3em auto;
   background-color: #eeeeee;
+  box-shadow: 0 0 25px #bfbfbf;
   border-width: 1px;
   padding: 1em;
   border-style: solid;
@@ -31,6 +34,7 @@ p {
   margin-right: 1em;
   border-width: 1px 1px 1px 3px;
   background-color: #FFF;
+  border-color: #bfbfbf;
   border-style: solid;
   border-radius: 3px;
   text-align: center;
@@ -43,13 +47,6 @@ p {
   display: block;
   padding: 0.3em;
 }
-.knowledge-entity__level {
-  display: block;
-  border-top: solid 1px #bfbfbf;
-  padding: 0.3em;
-  font-size: 0.8em;
-  color: #555555;
-}
 .knowledge-entity__version {
   font-size: 0.7em;
   color: #bfbfbf;
@@ -60,24 +57,63 @@ p {
 .knowledge-entity__version::after {
   content: ']';
 }
-.knowledge-entity--level-5 {
-  border-color: #428bca;
+.knowledge-entity__level {
+  display: block;
+  border-top: solid 1px #bfbfbf;
+  padding: 0.3em;
+  font-size: 0.8em;
+  color: #555555;
 }
-.knowledge-entity--level-4 {
-  border-color: #5cb85c;
+.knowledge-entity__level-meter {
+  display: block;
+  min-width: 5em;
+  margin: 3px;
+  border: 1px solid #bfbfbf;
+  border-radius: 3px;
 }
-.knowledge-entity--level-3 {
-  border-color: #5bc0de;
-}
-.knowledge-entity--level-2 {
-  border-color: #f0ad4e;
+.knowledge-entity__level-meter__meter {
+  display: block;
+  height: 3px;
 }
 .knowledge-entity--level-1 {
   border-color: #d9534f;
 }
+.knowledge-entity--level-1 .knowledge-entity__level-meter__meter {
+  background-color: #d9534f;
+  width: 20%;
+}
+.knowledge-entity--level-2 {
+  border-color: #f0ad4e;
+}
+.knowledge-entity--level-2 .knowledge-entity__level-meter__meter {
+  background-color: #f0ad4e;
+  width: 40%;
+}
+.knowledge-entity--level-3 {
+  border-color: #5bc0de;
+}
+.knowledge-entity--level-3 .knowledge-entity__level-meter__meter {
+  background-color: #5bc0de;
+  width: 60%;
+}
+.knowledge-entity--level-4 {
+  border-color: #5cb85c;
+}
+.knowledge-entity--level-4 .knowledge-entity__level-meter__meter {
+  background-color: #5cb85c;
+  width: 80%;
+}
+.knowledge-entity--level-5 {
+  border-color: #428bca;
+}
+.knowledge-entity--level-5 .knowledge-entity__level-meter__meter {
+  background-color: #428bca;
+  width: 100%;
+}
 .list-table {
   border-spacing: 0;
   border-collapse: collapse;
+  width: 100%;
 }
 .list-table td {
   border-bottom: 1px solid #bfbfbf;

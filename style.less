@@ -3,15 +3,13 @@
 @gray:         lighten(#000, 33.5%);
 @gray-light:   lighten(#000, 75%);
 @gray-lighter: lighten(#000, 93.5%);
+@gray-white:   lighten(#000, 98.5%);
 
-@knowledge-level-5: #428bca;
-@knowledge-level-4: #5cb85c;
-@knowledge-level-3: #5bc0de;
-@knowledge-level-2: #f0ad4e;
-@knowledge-level-1: #d9534f;
+@knowledge-levels: #d9534f, #f0ad4e, #5bc0de, #5cb85c, #428bca;
 
 body {
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   background-color: @gray-white;
    color: @gray-dark;
 }
 
@@ -36,6 +34,7 @@ p {
    width: 1000px;
    margin: 3em auto;
    background-color: @gray-lighter;
+   box-shadow: 0 0 25px @gray-light;
    .block-layout();
 }
 
@@ -58,6 +57,7 @@ p {
    margin-right: 1em;
    border-width: 1px 1px 1px 3px;
    background-color: #FFF;
+   border-color: @gray-light;
    border-style: solid;
    border-radius: 3px;
    text-align: center;
@@ -72,14 +72,6 @@ p {
       padding: 0.3em;
    }
 
-   &__level {
-      display: block;
-      border-top: solid 1px @gray-light;
-      padding: 0.3em;
-      font-size: 0.8em;
-      color: @gray;
-   }
-
    &__version {
       font-size: 0.7em;
       color: @gray-light;
@@ -92,21 +84,48 @@ p {
          content: ']';
       }
    }
+
+   &__level {
+      display: block;
+      border-top: solid 1px @gray-light;
+      padding: 0.3em;
+      font-size: 0.8em;
+      color: @gray;
+   }
+
+   &__level-meter {
+      display: block;
+      min-width: 5em;
+      margin: 3px;
+
+      border: 1px solid @gray-light;
+      border-radius: 3px;
+
+      &__meter {
+         display: block;
+         height: 3px;
+      }
+   }
 }
 
-.generate-knowledge-entity--level(5);
+.generate-knowledge-entity--level(1);
 
-.generate-knowledge-entity--level(@i) when (@i >0) {
-   @temp: "knowledge-level-@{i}";
-   .knowledge-entity--level-@{i} {
-      border-color: @@temp;
+.generate-knowledge-entity--level(@level) when (@level <= length(@knowledge-levels)) {
+   .knowledge-entity--level-@{level} {
+      border-color: extract(@knowledge-levels, @level);
+
+      .knowledge-entity__level-meter__meter {
+         background-color: extract(@knowledge-levels, @level);
+         width: percentage(@level/length(@knowledge-levels));
+      }
    }
-   .generate-knowledge-entity--level((@i - 1));
+   .generate-knowledge-entity--level((@level + 1));
 }
 
 .list-table {
    border-spacing: 0;
    border-collapse: collapse;
+   width: 100%;
 
    td {
       border-bottom: 1px solid @gray-light;

@@ -198,29 +198,31 @@ var data = {
          position_ru: 'Старший Front-end разработчик',
          start: new Date('2013-04-01'),
          end: null,
-         projects: {
-            name: 'Orpheus',
-            description: '',
-            description_ru: '',
-            technologies: [
-               {
-                  name: 'KendoUI',
-                  version: '2014 Q1'
-               },
-               {
-                  name: 'jQuery',
-                  version: '2.x'
-               },
-               {
-                  name: 'Orchard CMS',
-                  version: '1.8.1'
-               },
-               {
-                  name: '.NET',
-                  version: '5.0'
-               }
-            ]
-         }
+         projects: [
+            {
+               name: 'Orpheus',
+               description: 'On-line banking system.',
+               description_ru: 'Система для Интернет-банкинга.',
+               technologies: [
+                  {
+                     name: 'KendoUI',
+                     version: '2014 Q1'
+                  },
+                  {
+                     name: 'jQuery',
+                     version: '2.x'
+                  },
+                  {
+                     name: 'Orchard CMS',
+                     version: '1.8.1'
+                  },
+                  {
+                     name: '.NET',
+                     version: '5.0'
+                  }
+               ]
+            }
+         ],
       },
 
       {
@@ -284,20 +286,178 @@ var data = {
       },
 
       {
-         company: 'Freelance',
-         site: '',
-         position: 'Developer',
-         start: 'March 2012',
-         end: 'June 2012',
+         company: 'Murano Softare',
+         site: 'https://muranosoft.com',
+         position: 'Junior .NET developer',
+         position_ru: 'Младший .NET разработчик',
+         start: new Date('2011-04-01'),
+         end: new Date('2012-01-01'),
          projects: [
             {
-
+               name: 'PLTW Date Warehouse',
+               site: 'http://pltw.org',
+               description: '',
+               description_ru: '',
+               technologies: [
+                  {
+                     name: 'ASP.Net',
+                     version: '3.5'
+                  },
+                  {
+                     name: 'Win Forms',
+                     version: '3.5'
+                  },
+                  {
+                     name: 'SQL Server',
+                     version: '2008 R2'
+                  },
+               ]
             },
             {
+               name: 'Murano Time Tracking System',
+               description: '',
+               description_ru: '',
+               technologies: [
+                  {
+                     name: 'ASP.Net',
+                     version: '2.0'
+                  },
+                  {
+                     name: 'SQL Server',
+                     version: '2005'
+                  },
+                  {
+                     name: 'LLBLGen',
+                     version: '2.4'
+                  },
+               ]
+            }
+         ]
+      },
 
+      {
+         company: 'Sharq Telekom',
+         site: 'http://st.uz',
+         position: 'Software engineer',
+         position_ru: 'Инженер программист',
+         start: new Date('2010-10-01'),
+         end: new Date('2011-04-01'),
+         projects: [
+            {
+               name: 'ISP Billing System',
+               name_ru: 'Автоматизированная биллинговая система',
+               description: '',
+               description_ru: '',
+               technologies: [
+                  {
+                     name: 'PHP',
+                     version: '4.x'
+                  },
+                  {
+                     name: 'Zend Framework',
+                     version: ''
+                  },
+                  {
+                     name: 'Apache',
+                     version: ''
+                  },
+                  {
+                     name: 'PostgreSQL',
+                     version: '8.3'
+                  },
+                  {
+                     name: 'Python',
+                     version: '2.7.x'
+                  }
+               ]
+            }
+         ]
+      },
+
+      {
+         company: 'Tokyoscale',
+         site: null,
+         position: 'Python developer',
+         position_ru: 'Python разработчик',
+         start: new Date('2010-05-01'),
+         end: new Date('2010-10-01'),
+         projects: [
+            {
+               name: '',
+               name_ru: '',
+               description: '',
+               description_ru: '',
+               technologies: [
+                  {
+                     name: 'Python',
+                     version: '2.6.x'
+                  },
+                  {
+                     name: 'Django',
+                     version: ''
+                  },
+                  {
+                     name: 'nginx',
+                     version: ''
+                  },
+                  {
+                     name: 'MySQL',
+                     version: ''
+                  },
+                  {
+                     name: 'Amazon S3',
+                     version: ''
+                  },
+               ]
+            }
+         ]
+      },
+
+      {
+         company: 'Extra Soft Media',
+         site: null,
+         position: 'Junior .NET developer',
+         position_ru: 'Младший .NET разработчик',
+         start: new Date('2008-05-01'),
+         end: new Date('2009-07-01'),
+         projects: [
+            {
+               name: 'WM Smart',
+               description: 'Complicated system for warehouse management.',
+               description_ru: 'Система управления складами.',
+               technologies: [
+                  {
+                     name: 'VB.Net',
+                     version: '8.0'
+                  },
+                  {
+                     name: 'C#',
+                     version: '2.0'
+                  },
+                  {
+                     name: '.NET',
+                     version: '2.0'
+                  },
+                  {
+                     name: 'Win Forms',
+                     version: '2.0'
+                  },
+                  {
+                     name: 'SQL Sever',
+                     version: '2005'
+                  },
+               ]
             },
             {
-
+               name: 'Yellow Pages UZ',
+               description: 'Offline telephone book distributed on CD.',
+               description_ru: 'Телефонный справочник, распространяемый на CD.',
+               technologies: [
+                  {
+                     name: 'Delphi',
+                     version: '7'
+                  }
+               ]
             }
          ]
       },
@@ -307,14 +467,14 @@ var data = {
          site: 'http://netdec.uz',
          position: 'Technical writer',
          position_ru: 'Составитель документации',
-         start: new Date(''),
-         end: new Date(''),
+         start: new Date('2008-02-01'),
+         end: new Date('2007-08-01'),
          projects: [
             {
-               name: 'Textbook "C# 2.0 Basics"',
-               name_ru: 'Учебное пособие "Основы C# 2.0"',
-               description: '',
-               description_ru: '',
+               name: 'Textbook "Advanced C# 2.0"',
+               name_ru: 'Учебное пособие "Продвинутые возможности C# 2.0"',
+               description: 'A texbook for student who passed the first course.',
+               description_ru: 'Учебник для студентов, прошедших первый курс.',
                technologies: [
                   {
                      name: 'C#',
@@ -327,10 +487,10 @@ var data = {
                ]
             },
             {
-               name: 'Textbook "Advanced C# 2.0"',
-               name_ru: 'Учебное пособие "Продвинутые возможности C# 2.0"',
-               description: '',
-               description_ru: '',
+               name: 'Textbook "C# 2.0 Basics"',
+               name_ru: 'Учебное пособие "Основы C# 2.0"',
+               description: 'A textbook for students begging to study C# 2.0.',
+               description_ru: 'Учебник для начинающих изучать C# 2.0.',
                technologies: [
                   {
                      name: 'C#',
