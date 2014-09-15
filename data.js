@@ -194,7 +194,7 @@ var data = {
       {
          company: 'Access Softek',
          site: 'http://accesssoftek.com/',
-         position: 'Seniore front-end developer',
+         position: 'Senior front-end developer',
          position_ru: 'Старший Front-end разработчик',
          start: new Date('2013-04-01'),
          end: null,
@@ -261,7 +261,7 @@ var data = {
                name: 'Social media curation tool',
                name_ru: 'Инструмент для курирования социальных медиа',
                site: 'http://publishthis.com/',
-               decription: 'A tool to discover and curate social media content concerning a person\'s organisation.',
+               description: 'A tool to discover and curate social media content concerning a person\'s organisation.',
                description_ru: 'Инструмент для обнаружения и отслеживания постов в социальных медиа, относящихся к заинтересованной организации.',
                technologies: [
                   {
@@ -296,8 +296,12 @@ var data = {
             {
                name: 'PLTW Date Warehouse',
                site: 'http://pltw.org',
-               description: '',
-               description_ru: '',
+               description:
+                  'A system collecting data from several sources like students\' assesments, teachers\'s reposrs, and schools ratings. ' +
+                  'After the data has been collected the system generates several reports for inner use in house use.',
+               description_ru:
+                  'Система для сбора данных из нескольких источников таких, как оценки студентов, очеты преподавателей и рейтинги школ. ' +
+                  'После сбора данных, система генерирует несколько отчетов для внутреннего использования.',
                technologies: [
                   {
                      name: 'ASP.Net',
@@ -315,8 +319,8 @@ var data = {
             },
             {
                name: 'Murano Time Tracking System',
-               description: '',
-               description_ru: '',
+               description: 'Time tracking system used by Murano to track working time, assess employees, and bill clients.',
+               description_ru: 'Система отслеживания времени, используемую Murano для отслеживания рабочего времени, оценки сотрудников и высталения счетов клиентам.',
                technologies: [
                   {
                      name: 'ASP.Net',
@@ -346,8 +350,15 @@ var data = {
             {
                name: 'ISP Billing System',
                name_ru: 'Автоматизированная биллинговая система',
-               description: '',
-               description_ru: '',
+               site: 'https://st.uz/',
+               description:
+                  'ISP automation and billing system. ' +
+                  'The system tracks ADSL, dial-Up, telephony and hosting time and traffic and calculates the cost of these services. ' +
+                  'It also accepts payments from several providers.',
+               description_ru:
+                  'Автоматизированная система расчетов провайдера. ' +
+                  'Система отслеживает трффик и потраченное время для услуг ADSL, dial-up, телефонии и хостинга, и рассчитывает стоимость этих услуг. ' +
+                  'Она также принимает платежи от нескольких провайдеров.',
                technologies: [
                   {
                      name: 'PHP',
@@ -383,10 +394,10 @@ var data = {
          end: new Date('2010-10-01'),
          projects: [
             {
-               name: '',
-               name_ru: '',
-               description: '',
-               description_ru: '',
+               name: 'iyoiyo.jp',
+               site: 'http://www.iyoiyo.jp/',
+               description: 'A classified portal for Japan.',
+               description_ru: 'Портал объявлений для Японии.',
                technologies: [
                   {
                      name: 'Python',
@@ -423,6 +434,7 @@ var data = {
          projects: [
             {
                name: 'WM Smart',
+               site: 'http://invenology.com/',
                description: 'Complicated system for warehouse management.',
                description_ru: 'Система управления складами.',
                technologies: [
@@ -450,6 +462,7 @@ var data = {
             },
             {
                name: 'Yellow Pages UZ',
+               site: 'http://www.yellowpages.uz/',
                description: 'Offline telephone book distributed on CD.',
                description_ru: 'Телефонный справочник, распространяемый на CD.',
                technologies: [

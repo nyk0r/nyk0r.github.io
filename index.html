@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html ng-app="cv">
 <head>
-   <title ng-bind="title">CV</title>
+   <meta charset="utf-8" />
+   <title>CV</title>
    <link rel="stylesheet" href="style.css" />
    <!-- bower:js -->
    <script src="bower_components/angular/angular.js"></script>
@@ -11,6 +12,10 @@
 </head>
 <body ng-controller="app" ng-cloak>
    <div class="container">
+      <ul class="languages">
+         <li class="languages__language" ng-class="locale=='en' ? 'languages__language--active' : ''"><a ng-click="setLocale('en')">En</a></li>
+         <li class="languages__language" ng-class="locale=='ru' ? 'languages__language--active' : ''"><a ng-click="setLocale('ru')">Рус</a></li>
+      </ul>
       <section class="block">
          <h2>{{ i18n('contact.title') }}</h2>
          <div class="info-list">
@@ -81,76 +86,72 @@
 
       <section class="block">
          <h2>{{ i18n('technologies.title') }}</h2>
-         <table class="list-table">
-            <tbody>
-               <tr ng-repeat="technology in data.technologies">
-                  <td>
-                     {{ i18nData('technology.category') }}
-                  </td>
-                  <td>
-                     <span class="knowledge-entity"
-                           ng-class="['knowledge-entity--level-' + item.level, !$parent.$first ? 'knowledge-entity--margin-top' : '']"
-                           ng-repeat="item in technology.items | orderBy:'level'">
-                        <span class="knowledge-entity__item">
-                           {{ item.name }}
-                           <span class="knowledge-entity__version">
-                              <span ng-repeat="version in item.versions">
-                                 {{ version }}<span ng-if="!$last">,</span>
-                              </span>
+         <div class="list">
+            <div class="list__row" ng-repeat="technology in data.technologies">
+               <div class="list__cell list__cell--groupping">
+                  {{ i18nData('technology.category') }}
+               </div>
+               <div class="list__cell">
+                  <span class="knowledge-entity"
+                        ng-class="'knowledge-entity--level-' + item.level"
+                        ng-repeat="item in technology.items | orderBy:'level':true">
+                     <span class="knowledge-entity__item">
+                        {{ item.name }}
+                        <span class="knowledge-entity__version">
+                           <span ng-repeat="version in item.versions">
+                              {{ version }}<span ng-if="!$last">,</span>
                            </span>
                         </span>
-                        <!--<span class="knowledge-entity__level">{{ item.level }}/5</span>-->
-                        <span class="knowledge-entity__level-meter">
-                           <span class="knowledge-entity__level-meter__meter"></span>
-                        </span>
                      </span>
-                  </td>
-               </tr>
-            </tbody>
-         </table>
+                     <!--<span class="knowledge-entity__level">{{ item.level }}/5</span>-->
+                     <span class="knowledge-entity__level-meter">
+                        <span class="knowledge-entity__level-meter__meter"></span>
+                     </span>
+                  </span>
+               </div>
+            </div>
+         </div>
       </section>
 
       <section class="block block--no-margin">
          <h2>{{ i18n('experience.title') }}</h2>
-         <table class="list-table">
-            <tbody>
-               <tr ng-repeat="work in data.experience">
-                  <td>
-                     <div class="work">
-                        <div>
-                           <span class="work__company">
-                              <span ng-if="!work.site">{{ work.company }}</span>
-                              <a ng-if="work.site" ng-href="{{ work.site }}">{{ work.company }}</a>
-                           </span>
-                        </div>
-                        <div class="work__position">{{ i18nData('work.position') }}</div>
-                        <div class="work__time-span">
-                           {{ work.start | date:'MMMM yyyy' }} - {{ work.end | date:'MMMM yyyy' }}
-                        </div>
+         <div class="list">
+            <div class="list__row" ng-repeat="work in data.experience">
+               <div class="list__cell list__cell--groupping">
+                  <div class="work">
+                     <div>
+                        <span class="work__company">
+                           <span ng-if="!work.site">{{ i18nData('work.company') }}</span>
+                           <a ng-if="work.site" ng-href="{{ work.site }}">{{ work.company }}</a>
+                        </span>
                      </div>
-                  </td>
-                  <td>
-                     <div class="project" ng-repeat="project in work.projects">
-                        <div class="project__name">
-                           <span ng-if="!project.site">{{ project.name }}</span>
-                           <a ng-if="project.site" ng-href="{{ project.site }}">{{ project.name }}</a>
-                        </div>
-                        <div clss="project__description">{{ i18nData('project.description') }}</div>
-                        <div class="project__technologies">
-                           <span class="knowledge-entity" ng-repeat="technology in project.technologies">
-                              <span class="knowledge-entity__item">
-                                 {{ technology.name }}
-                                 <span class="knowledge-entity__version">
-                                    {{ technology.version }}
-                                 </span>
+                     <div class="work__position">{{ i18nData('work.position') }}</div>
+                     <div class="work__time-span">
+                        {{ work.start | date:'MMMM yyyy' }} - {{ work.end | date:'MMMM yyyy' }}
+                     </div>
+                  </div>
+               </div>
+               <div class="list__cell">
+                  <div class="project" ng-repeat="project in work.projects">
+                     <div class="project__name">
+                        <span ng-if="!project.site">{{ i18nData('project.name') }}</span>
+                        <a ng-if="project.site" ng-href="{{ project.site }}">{{ project.name }}</a>
+                     </div>
+                     <div clss="project__description">{{ i18nData('project.description') }}</div>
+                     <div class="project__technologies">
+                        <span class="knowledge-entity" ng-repeat="technology in project.technologies">
+                           <span class="knowledge-entity__item">
+                              {{ technology.name }}
+                              <span class="knowledge-entity__version">
+                                 {{ technology.version }}
                               </span>
                            </span>
-                        </div>
+                        </span>
                      </div>
-                  </td>
-               </tr>
-            </tbody>
-         </table>
+                  </div>
+               </div>
+            </div>
+         </div>
       </section>
    </div>
 </body>

@@ -5,7 +5,7 @@ angular.module('cv', []).
    controller('app', ['$scope', function ($scope) {
       var localization = {
          contact: {
-            title: { en: 'Contact Information', ru: 'Контакная информация' },
+            title: { en: 'Contact Information', ru: 'Контакная Информация' },
             name: { en: 'Full Name', ru: 'Полное имя' },
             dateOfBirth: { en: 'Date of Birth', ru: 'Дата рождения' },
             email: { en: 'E-Mail', ru: 'E-Mail' },
@@ -14,11 +14,11 @@ angular.module('cv', []).
          },
 
          education: {
-            title: { en: 'Education', ru: '' }
+            title: { en: 'Education', ru: 'Образование' }
          },
 
          spokenLanguages: {
-            title: { en: 'Spoken Languages', ru: 'Знания Языков' },
+            title: { en: 'Spoken Languages', ru: 'Знание Языков' },
             level: {
                1: { en: 'Begginer', ru: 'Начинающий' },
                2: { en: 'Intermediate', ru: 'Средне' },
@@ -55,12 +55,16 @@ angular.module('cv', []).
          return value;
       }
 
+      $scope.setLocale = function (locale) {
+         $scope.locale = locale;
+      }
+
       $scope.i18n = function (path) {
          return getValueByPath(localization, path + '.' + $scope.locale);
       }
 
       $scope.i18nData = function (path) {
-         return getValueByPath(this, path + ($scope.localization === 'ru' ? '_ru' : '')) || getValueByPath(this, path);
+         return getValueByPath(this, path + ($scope.locale === 'ru' ? '_ru' : '')) || getValueByPath(this, path);
       }
 
       $scope.getSpokenLanguageLevelTitle = function (level) {
