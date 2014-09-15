@@ -22,7 +22,7 @@ var data = {
    ],
    spokenLanguages: [
       {
-         name: 'Russion',
+         name: 'Russian',
          name_ru: 'Русский',
          level: 5
       },
@@ -39,7 +39,7 @@ var data = {
    ],
    technologies: [
       {
-         category: 'Operating Systmes',
+         category: 'Operating Systems',
          category_ru: 'Операционные Системы',
          items: [
             {
