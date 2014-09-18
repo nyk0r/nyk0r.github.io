@@ -137,7 +137,7 @@ var data = {
          ]
       },
       {
-         category: 'Data Bases',
+         category: 'Databases',
          category_ru: 'Базы Данных',
          items: [
             {
@@ -298,10 +298,10 @@ var data = {
                name: 'PLTW Date Warehouse',
                site: 'http://pltw.org',
                description:
-                  'A system collecting data from several sources like students\' assesments, teachers\'s reposrs, and schools ratings. ' +
-                  'After the data has been collected the system generates several reports for inner use in house use.',
+                  'A system collecting data from several sources like students\' assesments, teachers\'s reports, and schools ratings. ' +
+                  'After the data has been collected the system generates several reports for in house use.',
                description_ru:
-                  'Система для сбора данных из нескольких источников таких, как оценки студентов, очеты преподавателей и рейтинги школ. ' +
+                  'Система для сбора данных из нескольких источников таких, как оценки студентов, отчеты преподавателей и рейтинги школ. ' +
                   'После сбора данных, система генерирует несколько отчетов для внутреннего использования.',
                technologies: [
                   {
@@ -321,7 +321,7 @@ var data = {
             {
                name: 'Murano Time Tracking System',
                description: 'Time tracking system used by Murano to track working time, assess employees, and bill clients.',
-               description_ru: 'Система отслеживания времени, используемую Murano для отслеживания рабочего времени, оценки сотрудников и высталения счетов клиентам.',
+               description_ru: 'Система отслеживания времени, используемая Murano для отслеживания рабочего времени, оценки сотрудников и высталения счетов клиентам.',
                technologies: [
                   {
                      name: 'ASP.Net',
@@ -358,7 +358,7 @@ var data = {
                   'It also accepts payments from several providers.',
                description_ru:
                   'Автоматизированная система расчетов провайдера. ' +
-                  'Система отслеживает трффик и потраченное время для услуг ADSL, dial-up, телефонии и хостинга, и рассчитывает стоимость этих услуг. ' +
+                  'Система отслеживает траффик и потраченное время для услуг ADSL, dial-up, телефонии и хостинга, и рассчитывает стоимость этих услуг. ' +
                   'Она также принимает платежи от нескольких провайдеров.',
                technologies: [
                   {
@@ -503,7 +503,7 @@ var data = {
             {
                name: 'Textbook "C# 2.0 Basics"',
                name_ru: 'Учебное пособие "Основы C# 2.0"',
-               description: 'A textbook for students begging to study C# 2.0.',
+               description: 'A textbook for students beginning to study C# 2.0.',
                description_ru: 'Учебник для начинающих изучать C# 2.0.',
                technologies: [
                   {
