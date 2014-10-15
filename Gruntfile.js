@@ -1,4 +1,7 @@
+/* jshint node:true */
 module.exports = function (grunt) {
+   'use strict';
+
    grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
 
@@ -9,7 +12,8 @@ module.exports = function (grunt) {
             },
 
             options: {
-               banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd hh:mm:ss") %> */'
+               banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd hh:mm:ss") %> */'//,
+               //sourceMap: true
             }
          }
       },
@@ -19,12 +23,35 @@ module.exports = function (grunt) {
             files: {
                'style.css': '.tmp/style.css'
             }
+         },
+
+         options: {
+            //map: true
          }
       },
 
       wiredep: {
          all: {
             src: 'index.html'
+         }
+      },
+
+      jshint: {
+         files: [
+            'Gruntfile.js',
+            'app.js'
+         ],
+         options: {
+            jshintrc: '.jshintrc'
+         }
+      },
+
+      connect: {
+       server: {
+            options: {
+               port: 8383,
+               base: '.'
+            }
          }
       },
 
@@ -35,9 +62,12 @@ module.exports = function (grunt) {
    });
 
    grunt.loadNpmTasks('grunt-contrib-less');
+   grunt.loadNpmTasks('grunt-contrib-jshint');
    grunt.loadNpmTasks('grunt-autoprefixer');
+   grunt.loadNpmTasks('grunt-contrib-connect');
    grunt.loadNpmTasks('grunt-contrib-watch');
    grunt.loadNpmTasks('grunt-wiredep');
 
-   grunt.registerTask('build', ['less', 'autoprefixer', 'wiredep'])
+   grunt.registerTask('default', ['less', 'autoprefixer', 'connect', 'wiredep', 'watch']);
+   grunt.registerTask('build', ['less', 'autoprefixer', 'wiredep']);
 };
